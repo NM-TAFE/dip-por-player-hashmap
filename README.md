@@ -140,7 +140,7 @@ def __hash__(self):
 ````
 
 > **Tip:** To help choose a hash function, see the knowledge and reflection questions.
-
+> **WARNING:** If `__hash__` is called via `hash(your_player)`, the hash will be truncated based on the bit width of the host machine (usually 64-bit signed) [ref](https://docs.python.org/3/library/functions.html#hash) 
 Finally, while not strictly necessary, you may want to implement a `__eq__` method to compare two players. This will be useful for testing and it is customary that two players returning the same hash are considered equal.
 
 ```python
