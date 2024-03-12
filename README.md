@@ -1,3 +1,5 @@
+![DRAFT](https://img.shields.io/badge/-DRAFT-red)
+
 # Scenario
 
 You are employed as a junior software developer at a boutique software house called Softwares-RUs in Perth. You have been assigned to the Games team and will provide some of the code required for various games that the company builds and releases.
