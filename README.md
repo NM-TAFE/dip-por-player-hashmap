@@ -124,9 +124,11 @@ def __setitem__(self, key: str, name: str) -> none:
 ````python
 ### Step 3: Extend the Player Class to provide a hash
 
-You will extend the `Player` class to provide a hash method that will be used to calculate the index in the hash map where the player will be stored. The hash method should return an integer that will be used as the index in the hash map. The integer should be calculated using the player's key (uid) and return an int between 0-255.
+You will extend the `Player` class to provide a hash method that will be used to calculate the index in the hash map where the player will be stored. The hash method should return an integer that will be used as the index in the hash map. The integer should be calculated using the player's key (uid) and return an int that will not be truncated by Python's built in `hash()` function on the given architecture (usually 64-bit signed).
 
-In Python, there is a magic method called `__hash__` that is called when the hash() function is called on an object. You can override this method to provide a custom hash for your object.
+
+
+In Python, there is a magic method called `__hash__` that is called when the hash() function is passed an object of a given type. You can override this method to provide a custom hash for your object.
 
 ```python
 
@@ -140,14 +142,23 @@ def __hash__(self):
 ````
 
 > **Tip:** To help choose a hash function, see the knowledge and reflection questions.
-> **WARNING:** If `__hash__` is called via `hash(your_player)`, the hash will be truncated based on the bit width of the host machine (usually 64-bit signed) [ref](https://docs.python.org/3/library/functions.html#hash) 
-Finally, while not strictly necessary, you may want to implement a `__eq__` method to compare two players. This will be useful for testing and it is customary that two players returning the same hash are considered equal.
+> **WARNING:** If `__hash__` is called via `hash(your_player)`, the hash will be truncated based on the bit width of the host machine (usually 64-bit signed) [ref](https://docs.python.org/3/library/functions.html#hash)
+
+Finally, while not strictly necessary in this assessment, you may want to implement a `__eq__` method to compare two players. This will be useful for testing and it is customary that two players returning the same hash are considered equal.
 
 ```python
 def __eq__(self, other):
     return self.uid == other.uid
 ```
 
+### Step 3: Create a Display Method
+
+Implement a Display method in your Hash Map that will print the content of each `PlayerList` in the hash map with one or more players. The display method should print the index of the `PlayerList` and the players in the list. The display method should be called `display` and should not take any arguments.
+
 ### Step 4: Test the Hash Map
 
 Create a new test file called `test_hash_map.py` and write comprehensive tests to ensure the correctness and efficiency of your hash map implementation. Your tests should cover all the methods in the hash map and handle edge cases such as adding, retrieving, and removing players from the hash map.
+
+### Step 5: Complete the Reflection
+
+Complete the reflection in the `knowledge_and_reflection.md` file to demonstrate your understanding of the hash map and its implementation.
