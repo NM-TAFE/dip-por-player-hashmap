@@ -29,7 +29,7 @@ def sum_of_ascii_values(key: str, size: int) -> int:
     return sum(ord(char) for char in key) % size
 ```
 
-A pearson hash function
+A Pearson Hash function
 
 ```python
 # (3) Pearson hash function
@@ -68,7 +68,7 @@ def sha256_hash(key: str, size: int) -> int:
     return int(hashlib.sha256(key.encode()).hexdigest(), 16) % size
 ```
 
-1. All of the above functions are hash functions. Explain how so.
+1. All of the above functions are hash functions. Explain how so - what key properties do they all share?
 
 > Your answer here
 

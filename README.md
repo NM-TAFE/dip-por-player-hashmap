@@ -121,7 +121,7 @@ def __setitem__(self, key: str, name: str) -> none:
 
 ```
 
-````python
+
 ### Step 3: Extend the Player Class to provide a hash
 
 You will extend the `Player` class to provide a hash method that will be used to calculate the index in the hash map where the player will be stored. The hash method should return an integer that will be used as the index in the hash map. The integer should be calculated using the player's key (uid) and return an int that will not be truncated by Python's built-in `hash()` function on the given architecture (usually 64-bit signed).
@@ -139,7 +139,7 @@ def your_chosen_hash_function(cls, key: str) -> int:
 def __hash__(self):
     return self.your_chosen_hash_function(self.uid)
 
-````
+```
 
 > **Tip:** See the knowledge and reflection questions to help choose a hash function.
 > **WARNING:** If `__hash__` is called via `hash(your_player)`, the hash will be truncated based on the bit width of the host machine (usually 64-bit signed) [ref](https://docs.python.org/3/library/functions.html#hash)
