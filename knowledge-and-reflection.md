@@ -38,7 +38,10 @@ import random
 
 random.seed(42)
 
-pearson_table = [random.randint(0, 255) for _ in range(256)]
+# This is INCORRECT:
+# pearson_table = [random.randint(0, 255) for _ in range(256)]
+pearson_table = list(range(256))
+random.shuffle(pearson_table)
 
 def pearson_hash(key: str, size: int) -> int:
     hash_ = 0
