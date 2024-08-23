@@ -151,14 +151,14 @@ def __eq__(self, other):
     return self.uid == other.uid
 ```
 
-### Step 3: Create a Display Method
+### Step 4: Create a Display Method
 
 Implement a display method in your hash map that will print the content of each player list with one or more players. The display method should print the index of the `PlayerList` and the players in the list. The display method should be called `display` and should not take any arguments.
 
-### Step 4: Test the Hash Map
+### Step 5: Test the Hash Map
 
 Create a new test file called `test_hash_map.py` and write comprehensive tests to ensure the correctness and efficiency of your hash map implementation. Your tests should cover all the methods in the hash map and handle edge cases such as adding, retrieving, and removing players from the hash map.
 
-### Step 5: Complete the Reflection
+### Step 6: Complete the Reflection
 
 Complete the reflection in the `knowledge_and_reflection.md` file to demonstrate your understanding of the hash map and its implementation.
